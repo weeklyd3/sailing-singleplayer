@@ -71,7 +71,6 @@ io.on('connection', (socket) => {
 	log(`${ships[shipid].callsign} #${shipid} joined`);
 	socket.on('angle change', (newang) => {
 		ships[shipid].angle = newang;
-		socket.broadcast.emit('angle change', {id: shipid, angle: newang});
 	})
 	socket.on('objects load', (zones) => {
 		if (!zones.length) return;
