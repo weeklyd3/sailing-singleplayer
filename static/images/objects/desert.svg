@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="143.0916mm"
+   height="123.00282mm"
+   viewBox="0 0 143.0916 123.00282"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="desert.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.66903058"
+     inkscape:cx="289.9718"
+     inkscape:cy="416.27394"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-28.301016,-38.798035)">
+    <rect
+       style="fill:#ffeeaa;stroke-width:0.64135;stroke-linejoin:bevel"
+       id="rect234"
+       width="143.0916"
+       height="123.00282"
+       x="28.301016"
+       y="38.798035" />
+    <rect
+       style="fill:#ffeeaa;stroke-width:0.64135;stroke-linejoin:bevel"
+       id="rect290"
+       width="143.0916"
+       height="123.00282"
+       x="28.301016"
+       y="38.798035" />
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head><title>sailing thing</title>
+<script src="socket.io/socket.io.js"></script>
+<script src="scripts/game/connection/connect.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+<script src="scripts/loader.js"></script>
+<script src="scripts/game/main.js"></script>
+</head>
+<body>
+	<div id="pad">
+		<div class="chat" style="display: none;">
+			<div class="container"></div>
+			<form class="chat-input" action="javascript:sendMessage()" autocomplete="off">
+				<div id="command-warning"></div>
+				<label>Send a message to any ships &lt;=20000 units away:<br />
+					<input style="width: 200px;" id="msg" placeholder="your message here" value="" />
+				</label>
+			</form>
+		</div>
+	</div>
+	<style>
+		.chat {
+			display: none;
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: white;
+			padding: 3px;
+			overflow: scroll;
+		}
+	</style>
+	<script>
+		document.addEventListener('keydown', (ev) => {
+			const chat = document.querySelector('.chat');
+			if (chat.style.display == 'none' && document.activeElement.tagName == 'INPUT') document.activeElement.blur();
+			if (chat.style.display == 'none') ev.preventDefault();
+			if (chat.style.display == 'none' && ev.key == 'c') {
+				chat.style.display = 'block';
+				chat.querySelector('input').focus();
+				return;
+			}
+			if (ev.key == 'Escape') chat.style.display = 'none';
+		})
+		const chatInputBox = document.querySelector('#msg');
+		document.querySelector('#msg').addEventListener('keyup', () => {
+			const AVAILABLE_COMMANDS = currentGame.commands;
+			var changeText = '';
+			if (chatInputBox.value.startsWith('exec: ')) {
+				changeText = 'You have entered command mode. When you press ENTER, this will execute a command instead of being sent.';
+				var command = chatInputBox.value.split(' ')[1] ?? '';
+				if (command) {
+					if (AVAILABLE_COMMANDS[command]) {
+						changeText = `${command}: ${AVAILABLE_COMMANDS[command].description}`;
+					} else {
+						var cmdlist = Object.keys(AVAILABLE_COMMANDS);
+						changeText = `command search: `;
+						for (const cmd of cmdlist) {
+							if (cmd.includes(command)) changeText += cmd + ', ';
+						}
+						if (changeText.length == `command search: `.length) changeText = `no commands found  `;
+						changeText = changeText.slice(0, -2);
+					}
+				}
+			}
+			document.querySelector('#command-warning').textContent = changeText;
+		})
+		function sendMessage() {
+			const msg = document.querySelector('input').value;
+			if (msg.startsWith('exec: ')) {
+				var commandString = msg.slice(6);
+				currentGame.execCommand(commandString);
+				document.querySelector('input').value = '';
+				return;
+			}
+			socket.emit('chat message', msg);
+			document.querySelector('input').value = '';
+		}
+	</script>
+</body>
+</html>

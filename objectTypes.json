@@ -1,0 +1,9 @@
+{
+	"dock": {
+		"tileMode": "stretch"
+	},
+	"desert": {
+		"tileMode": "stretch"
+	},
+	"desertChange": {}
+}

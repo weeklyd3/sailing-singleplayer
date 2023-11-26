@@ -1,0 +1,56 @@
+{
+	"bounds": [100000, 100000],
+	"objects": [
+		{
+			"x": -1250,
+			"y": -1000,
+			"width": 1000,
+			"height": 1000,
+			"angle": 330,
+			"type": "desert"
+		},
+		{
+			"x": 55,
+			"y": -2205,
+			"width": 1000,
+			"height": 1020,
+			"type": "desert"
+		},
+		{
+			"x": 250,
+			"y": -1500,
+			"width": 1000,
+			"height": 1000,
+			"angle": 330,
+			"type": "desert"
+		},
+		{
+			"x": -150,
+			"y": -500,
+			"width": 90,
+			"height": 1000,
+			"type": "dock"
+		},
+		{
+			"x": 60,
+			"y": -500,
+			"width": 90,
+			"height": 1000,
+			"type": "dock"
+		},
+		{
+			"x": -350,
+			"y": -500,
+			"width": 200,
+			"height": 1000,
+			"type": "desert"
+		},
+		{
+			"x": -850,
+			"y": -500,
+			"width": 500,
+			"height": 1000,
+			"type": "desertChange"
+		}
+	]
+}
